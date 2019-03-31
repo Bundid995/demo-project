@@ -1,5 +1,9 @@
 
-window._ = require('lodash');
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Vuetify from 'vuetify'
+import axios from 'axios'
+import lodash from 'lodash'
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -20,7 +24,18 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = require('axios');
+// Global variables
+window.Vue = Vue
+window.axios = axios
+window._ = lodash
+window.appName = process.env.MIX_APP_NAME
+window.appUrl = process.env.MIX_APP_URL
+window.apiUrl = process.env.MIX_API_URL
+
+// Plugins initializations
+Vue.use(VueRouter)
+Vue.use(Vuetify)
+
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
