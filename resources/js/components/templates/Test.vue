@@ -23,7 +23,7 @@
               :color="active ? 'primary' : ''"
               class="d-flex align-center"
               dark
-              height="200"
+              height="300"
               @click="toggle"
               
             >
@@ -31,6 +31,7 @@
                 <div
                   v-if="active"
                   class="display-3 text-xs-center"
+                  
                 >
                   Active
                 </div>
@@ -53,22 +54,22 @@
 import axios from 'axios';
 
 export default {
-  // data () {
-  //   return {
-  //     lockers: [],
-  //     errors: []
-  //   }
-  // },
-  //    created() {
-  //   axios.get('api/lockers')
-  //   .then(response => {
-  //     // JSON responses are automatically parsed.
-  //     this.lockers = response.data
-  //   })
-  //   .catch(e => {
-  //     this.errors.push(e)
-  //   })
+  data () {
+    return {
+      lockers: [],
+      errors: []
+    }
+  },
+     created() {
+    axios.get('api/lockers')
+    .then(response => {
+      // JSON responses are automatically parsed.
+      this.lockers = response.data
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
     
-  // }
+  }
 }
 </script>

@@ -22,7 +22,7 @@ mix.sourceMaps()
 
 mix.browserSync({
     notify: false,
-    proxy: 'https://lit-shelf-43160.herokuapp.com/'
+    proxy: 'https://127.0.0.1:8000'
 })
 
 mix.webpackConfig({

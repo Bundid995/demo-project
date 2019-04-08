@@ -13,6 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::apiResource('lockers', 'Api\LockerController');
+Route::apiResource('units', 'Api\UnitController');
+Route::post('lockers/{locker}/ratings', 'LockerController@store');
